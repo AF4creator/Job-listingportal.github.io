@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
         }
     });
+    
+    //Handle Menu Toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+});
+
 
     // Change Background Color on Button Hover
     const buttons = document.querySelectorAll('button');
