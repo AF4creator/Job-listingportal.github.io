@@ -150,21 +150,40 @@ footer {
 }
 
 /* Responsive Design */
+/* Mobile Menu */
 @media (max-width: 768px) {
     nav ul {
+        display: none; /* Hide the navigation menu */
         flex-direction: column;
-        margin-top: 5px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1e90ff; /* Same as the header */
+    }
+
+    nav ul.show {
+        display: flex; /* Show the menu when it's active */
     }
 
     nav ul li {
+        width: 100%;
+        text-align: center;
         margin: 10px 0;
     }
 
-    form {
-        padding: 15px;
+    nav ul li a {
+        padding: 10px 0;
+        display: block;
+        color: white;
     }
 
-    #job-listing {
-        padding: 15px;
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        background-color: #1e90ff;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
     }
 }
