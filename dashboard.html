@@ -9,8 +9,8 @@
 <body>
     <header>
         <h1>Dashboard</h1>
-        <div class="menu-toggle">Menu</div>
-        <nav>
+        <button class="menu-toggle">Menu</button>
+        <nav class="nav-list">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
@@ -26,12 +26,15 @@
             <h2>Your Dashboard</h2>
             <p>Welcome to your dashboard. Here you can manage your job listings and applications with further details.</p>
             <!-- Additional dashboard content goes here -->
+            <div id="dashboard-content">
+                <!-- Dynamic content will be injected here -->
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Job Listing Portal. All rights reserved.</p>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
