@@ -1,6 +1,7 @@
 /* General Reset */
 * {
     margin: 0;
+    border: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
@@ -17,7 +18,7 @@ body {
 header {
     background-color: #1e90ff; /* Dodger blue */
     color: white;
-    padding: 15px 20px;
+    padding: 10px 20px; /* Reduced padding */
     text-align: center;
     position: fixed;
     width: 100%;
@@ -29,7 +30,57 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.8em; /* Slightly reduced font size */
+}
+
+/* Style for the menu toggle button */
+.menu-toggle {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #fff;
+    color: #1e90ff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+/* Style for the navigation list */
+.nav-list {
+    display: none; /* Hide the navigation list by default */
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.nav-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list ul li {
+    margin: 10px 0; /* Spacing between items */
+}
+
+.nav-list ul li a {
+    color: #1e90ff;
+    text-decoration: none;
+    display: block; /* Makes the link occupy the full width */
+    padding: 10px; /* Add padding for better spacing */
+}
+
+.nav-list ul li a:hover {
+    text-decoration: none;
 }
 
 /* Navigation Styling */
@@ -37,28 +88,27 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px; /* Reduced margin */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* Space between items */
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff00; /* Transparent color */
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1em; /* Font size */
     transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-     /* Hover color */
     text-transform: uppercase;
 }
 
 /* Main Section Styling */
 main {
-    padding: 100px 20px 20px 20px; /* Top padding adjusted for fixed header */
+    padding: 120px 20px 20px 20px; /* Adjusted padding for fixed header and navigation */
     min-height: 100vh;
 }
 
@@ -72,7 +122,7 @@ main {
 }
 
 #job-listing:hover {
-    transform: translateY(-5px); /* Hover effect */
+    transform: none; /* Removed scaling effect */
 }
 
 .job-listing {
@@ -83,57 +133,6 @@ main {
     color: #1e90ff; /* Title color */
     font-size: 1.5em;
     margin-bottom: 5px;
-}
-
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    font-size: 1.1em;
-    color: #333;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="file"] {
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #1e90ff;
-    border-radius: 5px;
-    transition: border-color 0.3s ease-in-out;
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
-form input[type="file"]:focus {
-    border-color: #1ee5ff; /* Focus color */
-    outline: none;
-}
-
-form button {
-    padding: 10px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #1e90ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-form button:hover {
-    background-color: #ffcc00; /* Hover color */
-    border-color: #ffffff;
 }
 
 /* Footer Styling */
@@ -149,21 +148,20 @@ footer {
     z-index: 1000;
 }
 
-/* Responsive Design */
 /* Mobile Menu */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Hide the navigation menu */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 50px; /* Adjusted top position */
         left: 0;
         width: 100%;
-        background-color: #1e90ff; /* Same as the header */
+        background-color: #1e90ff;
     }
 
     nav ul.show {
-        display: flex; /* Show the menu when it's active */
+        display: flex;
     }
 
     nav ul li {
@@ -186,4 +184,34 @@ footer {
         padding: 10px 20px;
         text-align: center;
     }
+}
+
+/* Form Styling */
+form {
+    max-width: 600px; /* Constrain form width for better layout */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #fff; /* White background for the form */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+form input, form button {
+    width: 100%; /* Full width input and button */
+    padding: 10px;
+    margin: 10px 0; /* Space between form elements */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+form button {
+    background-color: #1e90ff; /* Button background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ffffff; /* Darker background on hover */
+    color:#1e90ff;
 }
